@@ -1,0 +1,58 @@
+﻿<metadata>
+	<!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+	<remove-node path="/api/package[@name='com.ironsource.adapters.ironsource.nativeAd']/class[@name='IronSourceNativeAdViewBinder']" />
+ 
+	<remove-node path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='InterstitialListener']" />
+	<remove-node path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='RewardedVideoListener']" />
+ 
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayInterstitialListener']/method[@name='onAdClicked' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdClicked_Interstitial_EventArgs</attr>
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayInterstitialListener']/method[@name='onAdLoadFailed' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.logger.IronSourceError']]">OnAdLoadFailed_Interstitial_EventArgs</attr>
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayInterstitialListener']/method[@name='onAdClosed' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdClosed_Interstitial_EventArgs</attr>
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayInterstitialListener']/method[@name='onAdShowFailed' and count(parameter)=2 and parameter[1][@type='com.ironsource.mediationsdk.logger.IronSourceError'] and parameter[2][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdShowFailed_Interstitial_EventArgs</attr>
+ 
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayRewardedVideoBaseListener']/method[@name='onAdClicked' and count(parameter)=2 and parameter[1][@type='com.ironsource.mediationsdk.model.Placement'] and parameter[2][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdClicked_RewardedVideo_EventArgs</attr>
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayRewardedVideoBaseListener']/method[@name='onAdClosed' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdClosed_RewardedVideo_EventArgs</attr>
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='LevelPlayRewardedVideoBaseListener']/method[@name='onAdOpened' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.adunit.adapter.utility.AdInfo']]">OnAdOpened_RewardedVideo_EventArgs</attr>
+ 
+	<attr name="argsType" path="/api/package[@name='com.ironsource.mediationsdk.sdk']/interface[@name='BannerSmashListener']/method[@name='onBannerAdLoadFailed' and count(parameter)=1 and parameter[1][@type='com.ironsource.mediationsdk.logger.IronSourceError']]">OnBannerAdLoadFailedEventArgs</attr>
+
+	<add-node path="/api/package[@name='com.ironsource.mediationsdk.adunit.adapter']/class[@name='BaseBanner']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="LoadAd" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="adData" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Utility.AdData" />
+			<parameter name="activity" type="Android.App.Activity" />
+			<parameter name="bannerSize" type="Com.Ironsource.Mediationsdk.ISBannerSize" />
+			<parameter name="listener" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Listener.IBannerAdListener" />
+		</method>
+	</add-node>
+ 
+	<add-node path="/api/package[@name='com.ironsource.mediationsdk.adunit.adapter']/class[@name='BaseNativeAd']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="LoadAd" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="adData" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Utility.AdData" />
+			<parameter name="activity" type="Android.App.Activity" />
+			<parameter name="listener" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Listener.INativeAdListener" />
+		</method>
+	</add-node>
+ 
+	<add-node path="/api/package[@name='com.ironsource.mediationsdk.adunit.adapter.internal']/class[@name='BaseAdInteractionAdapter']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="LoadAd" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="adData" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Utility.AdData" />
+			<parameter name="activity" type="Android.App.Activity" />
+			<parameter name="listener" type="Java.Lang.Object" />
+		</method>
+	</add-node>
+ 
+	<add-node path="/api/package[@name='com.ironsource.mediationsdk.adunit.adapter.internal']/class[@name='BaseAdInteractionAdapter']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="ShowAd" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="adData" type="Com.Ironsource.Mediationsdk.Adunit.Adapter.Utility.AdData" />
+			<parameter name="listener" type="Java.Lang.Object" />
+		</method>
+	</add-node>
+  
+</metadata>
